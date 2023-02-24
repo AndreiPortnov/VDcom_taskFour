@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  pg_db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_DB=books
+      - POSTGRES_USER=books
+      - POSTGRES_PASSWORD=books
+    volumes:
+      - db:/var/lib/postgresql/data
+    ports:
+      - "5439:5432"
+
+volumes:
+  db:
